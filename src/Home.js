@@ -102,17 +102,20 @@ export default function Home() {
   }
 
   const handleGenerateWorkOrder = () => {
-    window.open('/work_order', '_blank')
+    window.open('/#/work_order', '_blank')
   }
 
   useEffect(() => {
     // Listen for changes to localStorage
     const handleLocalStorageChange = () => {
-      // Trigger a re-render when lowestThicknessValue in localStorage gets set
-      if (localStorage.getItem('lowestThickness')) {
-        // Force a re-render by updating state
-        setLoading(prevLoading => !prevLoading);
-      }
+        // Trigger a re-render when lowestThicknessValue in localStorage gets set
+        if (localStorage.getItem('lowestThickness')) {
+            // Force a re-render by updating state
+            setLoading(prevLoading => !prevLoading);
+            
+            // Remove event listener after it's triggered once
+            window.removeEventListener('storage', handleLocalStorageChange);
+        }
     };
 
     // Add event listener
@@ -120,10 +123,9 @@ export default function Home() {
 
     // Cleanup: Remove event listener
     return () => {
-      window.removeEventListener('storage', handleLocalStorageChange);
+        window.removeEventListener('storage', handleLocalStorageChange);
     };
-  }, []); // Only run this effect once
-
+}, []); // Only run this effect once
 
   useEffect(() => {
     if (selectedPoint?.pipeThickness < PIPE_CONSTANTS.minAcceptableThreshold) {
