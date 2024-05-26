@@ -7,8 +7,8 @@ import NotFound from './components/Pages/NotFound';
 const AppRoutes = () => {
     return (
       <Routes>
-        <Route path="/pipe-data-visualization-dashboard" element={<Home/>} />
-        <Route path="/pipe-data-visualization-dashboard/work_order" element={<WorkOrder/>} />
+        <Route path="/" element={<Home/>} />
+        <Route path="/work_order" element={<WorkOrder/>} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
