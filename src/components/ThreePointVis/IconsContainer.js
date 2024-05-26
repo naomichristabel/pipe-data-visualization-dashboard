@@ -45,7 +45,7 @@ const IconsContainer = (props) => {
             <img src="./assets/icons/reduce-white.png" width={32} height={32} alt="Strongest Decline Icon" />
         </div> */}
         <div className='col-md-2 single-icon' onClick={handleTogglePlanes}>
-            <img src="./assets/icons/planes.svg" width={32} height={32} alt="Planes Icon" />
+            <img src="../../pipe-data-visualization-dashboard/assets/icons/planes.svg" width={32} height={32} alt="Planes Icon" />
         </div>
         <div className='col-md-2 single-icon' onClick={handleOpenInfo}>
             <i className="bi bi-info-circle h4"></i>

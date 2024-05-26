@@ -6,7 +6,7 @@ const Modal = ({ isOpen, onClose }) => {
 
     const modalIcons = {
         rotate: {
-            icon: <img src="./assets/icons/360-rotate.svg" width={40} height={40} alt="Rotate Icon" style={{ filter: 'invert(100%)'}}/>,
+            icon: <img src="../../pipe-data-visualization-dashboard/assets/icons/360-rotate.svg" width={40} height={40} alt="Rotate Icon" style={{ filter: 'invert(100%)'}}/>,
             title: 'Orbit',
             content: <span>Right click + drag <br/> or Two-finger drag (touch)</span>
         },

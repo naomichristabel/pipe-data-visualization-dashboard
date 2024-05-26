@@ -4,22 +4,22 @@ import ConfigBox from './ConfigBox'
 const Configuration = () => {
     const configBoxData = {
         pipeName: {
-            icon: <img src="./assets/icons/pipe.png" width="50" height="50" alt="Pipe"/>,
+            icon: <img src="../../pipe-data-visualization-dashboard/assets/icons/pipe.png" width="50" height="50" alt="Pipe"/>,
             title: 'Pipe Name',
             content: '10-PF-G2-332001'
         },
         fileName: {
-            icon: <img src="./assets/icons/file.png" width="50" height="50" alt="Pipe"/>,
+            icon: <img src="../../pipe-data-visualization-dashboard/assets/icons/file.png" width="50" height="50" alt="Pipe"/>,
             title: 'File Name',
             content: '332001.json'
         },
         pipeDiameter: {
-            icon: <img src="./assets/icons/diameter.png" width="50" height="50" alt="Pipe"/>,
+            icon: <img src="../../pipe-data-visualization-dashboard/assets/icons/diameter.png" width="50" height="50" alt="Pipe"/>,
             title: <>Pipe Diameter<br/><br/></>,
             content: '10 inch'
         },
         minAccThreshold: {
-            icon: <img src="./assets/icons/threshold.png" width="50" height="50" alt="Pipe"/>,
+            icon: <img src="../../pipe-data-visualization-dashboard/assets/icons/threshold.png" width="50" height="50" alt="Pipe"/>,
             title: 'Acceptable Minimum Thickness Threshold',
             content: '18.96 mm'
         }

@@ -174,10 +174,10 @@ const TrendPlot = ({ direction }) => {
             <div ref={plotRef} className={direction?.toLowerCase() === minSlopeDirection ? 'strongest-decline' : ''}></div>
         
             <div style={{ position: "absolute", top: 10, right: 10 }}>
-                {direction === LABEL.direction.n && <img src='./assets/icons/north.png' alt="North Icon" />}
-                {direction === LABEL.direction.s && <img src='./assets/icons/south.png' alt="South Icon" />}
-                {direction === LABEL.direction.e && <img src='./assets/icons/east.png' alt="East Icon" />}
-                {direction === LABEL.direction.w && <img src='./assets/icons/west.png' alt="West Icon" />}
+                {direction === LABEL.direction.n && <img src='../../pipe-data-visualization-dashboard/assets/icons/north.png' alt="North Icon" />}
+                {direction === LABEL.direction.s && <img src='../../pipe-data-visualization-dashboard/assets/icons/south.png' alt="South Icon" />}
+                {direction === LABEL.direction.e && <img src='../../pipe-data-visualization-dashboard/assets/icons/east.png' alt="East Icon" />}
+                {direction === LABEL.direction.w && <img src='../../pipe-data-visualization-dashboard/assets/icons/west.png' alt="West Icon" />}
             </div>
         </div>
     );

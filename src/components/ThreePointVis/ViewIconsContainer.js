@@ -107,22 +107,22 @@ const ViewIconsContainer = (props) => {
   return (
     <div className="view-icons-container row" style={{color: COLOURS.white, width: '500px', marginRight: '-12%', marginBottom: '-12px' }}>
         <div id={LABEL.direction.n} className='col-md-2 single-icon' onClick={handleViewChange}>
-            <img src="./assets/icons/north.svg" width={60} height={60} alt="North Icon" />
+            <img src="../../pipe-data-visualization-dashboard/assets/icons/north.svg" width={60} height={60} alt="North Icon" />
         </div>
         <div id={LABEL.direction.s} className='col-md-2 single-icon' onClick={handleViewChange}>
-            <img src="./assets/icons/south.svg" width={60} height={60} alt="South Icon" />
+            <img src="../../pipe-data-visualization-dashboard/assets/icons/south.svg" width={60} height={60} alt="South Icon" />
         </div>
         <div id={LABEL.direction.e} className='col-md-2 single-icon' onClick={handleViewChange}>
-            <img src="./assets/icons/east.svg" width={60} height={60} alt="East Icon" />
+            <img src="../../pipe-data-visualization-dashboard/assets/icons/east.svg" width={60} height={60} alt="East Icon" />
         </div>
         <div id={LABEL.direction.w} className='col-md-2 single-icon' onClick={handleViewChange}>
-            <img src="./assets/icons/west.svg" width={60} height={60} alt="West Icon" />
+            <img src="../../pipe-data-visualization-dashboard/assets/icons/west.svg" width={60} height={60} alt="West Icon" />
         </div>
         <div id={LABEL.direction.full} className='col-md-2 single-icon' onClick={handleViewChange}>
-            <img src="./assets/icons/strongest-decline.svg" width={32} height={32} alt="Full Pipe Icon" style={{ marginBottom: '-22px' }}/>
+            <img src="../../pipe-data-visualization-dashboard/assets/icons/strongest-decline.svg" width={32} height={32} alt="Full Pipe Icon" style={{ marginBottom: '-22px' }}/>
         </div>
         <div id={LABEL.strongestDecline} className='col-md-2 single-icon' onClick={handleViewChange}>
-            <img src="./assets/icons/reduce-white.png" width={32} height={32} alt="Strongest Decline Icon" style={{ marginBottom: '-22px' }} />
+            <img src="../../pipe-data-visualization-dashboard/assets/icons/reduce-white.png" width={32} height={32} alt="Strongest Decline Icon" style={{ marginBottom: '-22px' }} />
         </div>
 
     </div>

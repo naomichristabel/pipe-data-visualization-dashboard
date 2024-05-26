@@ -40,7 +40,7 @@ export const DataContextProvider = (props) => {
     useEffect(() => {
       const fetchHistogramData = async () => {
         try {
-          const response = await fetch('./Sebastian/332001_c11_c21_ct2_ct3_complete.csv_df_plot.json');
+          const response = await fetch('../../pipe-data-visualization-dashboard/Sebastian/332001_c11_c21_ct2_ct3_complete.csv_df_plot.json');
           const jsonData = await response.json();
           //console.log(jsonData,'jsondata')
 
@@ -81,7 +81,7 @@ export const DataContextProvider = (props) => {
   
       const fetchPipeData = async () => {
         try {
-          const response = await fetch('./Sebastian/332001_c11_c21_ct2_ct3_complete.csv_df_plot_array.json');
+          const response = await fetch('../../pipe-data-visualization-dashboard/Sebastian/332001_c11_c21_ct2_ct3_complete.csv_df_plot_array.json');
           const jsonData = await response.json();
   
           const mappedData = [];

@@ -6,8 +6,8 @@ import Home from './Home';
 const AppRoutes = () => {
     return (
       <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/work_order" element={<WorkOrder/>} />
+        <Route path="/pipe-data-visualization-dashboard" element={<Home/>} />
+        <Route path="/pipe-data-visualization-dashboard/work_order" element={<WorkOrder/>} />
       </Routes>
     );
   }
