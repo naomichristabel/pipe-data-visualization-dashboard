@@ -4,7 +4,7 @@ import ConfigBox from './ConfigBox'
 const Configuration = () => {
     const configBoxData = {
         pipeName: {
-            icon: <img src="../../pipe-data-visualization-dashboard/assets/icons/pipe.PNG" width="50" height="50" alt="Pipe"/>,
+            icon: <img src="../../pipe-data-visualization-dashboard/assets/icons/pipe.png" width="50" height="50" alt="Pipe"/>,
             title: 'Pipe Name',
             content: '10-PF-G2-332001'
         },
