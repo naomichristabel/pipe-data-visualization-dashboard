@@ -16,6 +16,7 @@ import IconsContainer from './components/ThreePointVis/IconsContainer.js';
 import Modal from './components/ThreePointVis/Modal.js';
 import Configuration from './components/Charts/Configuration.js';
 import ViewIconsContainer from './components/ThreePointVis/ViewIconsContainer.js';
+import { Blocks } from 'react-loader-spinner'
 
 //const data = new Array(PIPE_CONSTANTS.pipeSectionCount).fill(0).map((d, id) => ({ id: id + 1, d: Math.round(Math.random() * 1000) / 1000 }));
 //const data = [{ id: 1500 }, { id: 1704 }, { id: 1620 }, { id: 1980 }, { id: 2000 }, { id: 2200 }, { id: 1840 }]
@@ -101,8 +102,28 @@ export default function Home() {
   }
 
   const handleGenerateWorkOrder = () => {
-    window.open('/pipe-data-visualization-dashboard/work_order', '_blank')
+    window.open('/work_order', '_blank')
   }
+
+  useEffect(() => {
+    // Listen for changes to localStorage
+    const handleLocalStorageChange = () => {
+      // Trigger a re-render when lowestThicknessValue in localStorage gets set
+      if (localStorage.getItem('lowestThickness')) {
+        // Force a re-render by updating state
+        setLoading(prevLoading => !prevLoading);
+      }
+    };
+
+    // Add event listener
+    window.addEventListener('storage', handleLocalStorageChange);
+
+    // Cleanup: Remove event listener
+    return () => {
+      window.removeEventListener('storage', handleLocalStorageChange);
+    };
+  }, []); // Only run this effect once
+
 
   useEffect(() => {
     if (selectedPoint?.pipeThickness < PIPE_CONSTANTS.minAcceptableThreshold) {
@@ -129,6 +150,22 @@ export default function Home() {
       // Default class name if selPointColour doesn't match any predefined colors
       return 'tooltip-default';
     }
+  }
+
+  if (loading) {
+    return (
+      <div className="spinner-container">
+        <Blocks
+          height="100"
+          width="100"
+          color="#4fa94d"
+          ariaLabel="blocks-loading"
+          wrapperStyle={{}}
+          wrapperClass="blocks-wrapper"
+          visible={true}
+        />
+      </div>
+    );
   }
 
   return (
