@@ -1,0 +1,134 @@
+[
+    {
+        "pipeSectionId": "2202",
+        "pipeThickness": "18.684",
+        "count": "3",
+        "countPercent": "15"
+    },
+    {
+        "pipeSectionId": "1809",
+        "pipeThickness": "18.684",
+        "count": "3",
+        "countPercent": "15"
+    },
+    {
+        "pipeSectionId": "1850",
+        "pipeThickness": "18.684",
+        "count": "3",
+        "countPercent": "15"
+    },
+    {
+        "pipeSectionId": "1994",
+        "pipeThickness": "19.154",
+        "count": "1",
+        "countPercent": "5"
+    },
+    {
+        "pipeSectionId": "2234",
+        "pipeThickness": "19.567",
+        "count": "1",
+        "countPercent": "5"
+    },
+    {
+        "pipeSectionId": "2224",
+        "pipeThickness": "19.913",
+        "count": "1",
+        "countPercent": "5"
+    },
+    {
+        "pipeSectionId": "2368",
+        "pipeThickness": "20.432",
+        "count": "4",
+        "countPercent": "20"
+    },
+    {
+        "pipeSectionId": "2358",
+        "pipeThickness": "20.432",
+        "count": "4",
+        "countPercent": "20"
+    },
+    {
+        "pipeSectionId": "2465",
+        "pipeThickness": "20.432",
+        "count": "4",
+        "countPercent": "20"
+    },
+    {
+        "pipeSectionId": "2896",
+        "pipeThickness": "20.432",
+        "count": "4",
+        "countPercent": "20"
+    },
+    {
+        "pipeSectionId": "2510",
+        "pipeThickness": "20.987",
+        "count": "1",
+        "countPercent": "5"
+    },
+    {
+        "pipeSectionId": "1870",
+        "pipeThickness": "18.75",
+        "count": "1",
+        "countPercent": "5"
+    },
+    {
+        "pipeSectionId": "1920",
+        "pipeThickness": "18.184",
+        "count": "5",
+        "countPercent": "25"
+    },
+    {
+        "pipeSectionId": "2102",
+        "pipeThickness": "18.184",
+        "count": "5",
+        "countPercent": "25"
+    },
+    {
+        "pipeSectionId": "2178",
+        "pipeThickness": "18.184",
+        "count": "5",
+        "countPercent": "25"
+    },
+    {
+        "pipeSectionId": "1839",
+        "pipeThickness": "18.184",
+        "count": "5",
+        "countPercent": "25"
+    },
+    {
+        "pipeSectionId": "2941",
+        "pipeThickness": "18.184",
+        "count": "5",
+        "countPercent": "25"
+    },
+    {
+        "pipeSectionId": "1721",
+        "pipeThickness": "18.184",
+        "count": "5",
+        "countPercent": "25"
+    },
+    {
+        "pipeSectionId": "1789",
+        "pipeThickness": "20.567",
+        "count": "2",
+        "countPercent": "10"
+    },
+    {
+        "pipeSectionId": "2090",
+        "pipeThickness": "20.567",
+        "count": "2",
+        "countPercent": "10"
+    },
+    {
+        "pipeSectionId": "2270",
+        "pipeThickness": "19.329",
+        "count": "2",
+        "countPercent": "10"
+    },
+    {
+        "pipeSectionId": "2296",
+        "pipeThickness": "19.329",
+        "count": "2",
+        "countPercent": "10"
+    }
+]

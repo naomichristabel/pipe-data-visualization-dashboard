@@ -1,0 +1,24 @@
+.workOrderContainer {
+    text-align: center;
+    background-color: white;
+    color: black;
+    height: 500px;
+    margin-top: -30px;
+  }
+  
+  .table {
+    /* Add any additional table styles here */
+  }
+  
+  .row:hover {
+    cursor: pointer;
+  }
+  
+  .row:hover {
+    border: 2px solid rgb(44, 44, 44);
+  }
+  
+  .selectedWorkOrder {
+    /* Add styles for the right-side div here */
+  }
+  

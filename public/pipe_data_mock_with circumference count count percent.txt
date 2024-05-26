@@ -1,0 +1,737 @@
+[
+    {
+        "pipeSectionId": "1798",
+        "pipeThickness": "18.684",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1798",
+        "pipeThickness": "18.684",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1798",
+        "pipeThickness": "18.24",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1798",
+        "pipeThickness": "18.684",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1798",
+        "pipeThickness": "18.684",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1808",
+        "pipeThickness": "19.356",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1808",
+        "pipeThickness": "19.356",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1808",
+        "pipeThickness": "19.1",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1808",
+        "pipeThickness": "19.1",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1808",
+        "pipeThickness": "19.1",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1812",
+        "pipeThickness": "18.269",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1812",
+        "pipeThickness": "18.269",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1812",
+        "pipeThickness": "18.269",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1812",
+        "pipeThickness": "18.269",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1812",
+        "pipeThickness": "18.269",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1825",
+        "pipeThickness": "19.154",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1825",
+        "pipeThickness": "19.154",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1825",
+        "pipeThickness": "19.154",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1825",
+        "pipeThickness": "19.154",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1825",
+        "pipeThickness": "18.111",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1830",
+        "pipeThickness": "19.567",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1830",
+        "pipeThickness": "18.555",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1830",
+        "pipeThickness": "18.555",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1830",
+        "pipeThickness": "18.123",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1830",
+        "pipeThickness": "19.567",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1845",
+        "pipeThickness": "20.234",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1845",
+        "pipeThickness": "20.234",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1845",
+        "pipeThickness": "20.234",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1845",
+        "pipeThickness": "20.234",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1845",
+        "pipeThickness": "20.234",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1852",
+        "pipeThickness": "20.234",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1852",
+        "pipeThickness": "20.234",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1852",
+        "pipeThickness": "20.234",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1852",
+        "pipeThickness": "20.234",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1852",
+        "pipeThickness": "20.234",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1861",
+        "pipeThickness": "20.432",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1861",
+        "pipeThickness": "20.432",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1861",
+        "pipeThickness": "20.432",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1861",
+        "pipeThickness": "18.399",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1861",
+        "pipeThickness": "18.399",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1872",
+        "pipeThickness": "18.184",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1872",
+        "pipeThickness": "18.184",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1872",
+        "pipeThickness": "18.184",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1872",
+        "pipeThickness": "18.184",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1872",
+        "pipeThickness": "18.184",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1885",
+        "pipeThickness": "18.184",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1885",
+        "pipeThickness": "18.184",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1885",
+        "pipeThickness": "18.598",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1885",
+        "pipeThickness": "18.598",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1885",
+        "pipeThickness": "18.598",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1892",
+        "pipeThickness": "18.598",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1892",
+        "pipeThickness": "18.622",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1892",
+        "pipeThickness": "18.622",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1892",
+        "pipeThickness": "18.622",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1892",
+        "pipeThickness": "18.622",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1904",
+        "pipeThickness": "18.622",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1904",
+        "pipeThickness": "18.622",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1904",
+        "pipeThickness": "18.622",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1904",
+        "pipeThickness": "18.622",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1904",
+        "pipeThickness": "17.2",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1915",
+        "pipeThickness": "22.222",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1915",
+        "pipeThickness": "22.222",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1915",
+        "pipeThickness": "22.222",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1915",
+        "pipeThickness": "22.222",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1915",
+        "pipeThickness": "22.222",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1924",
+        "pipeThickness": "22.222",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1924",
+        "pipeThickness": "22.222",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1924",
+        "pipeThickness": "22.222",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1924",
+        "pipeThickness": "22.222",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1924",
+        "pipeThickness": "20.444",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1937",
+        "pipeThickness": "20.444",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1937",
+        "pipeThickness": "20.444",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1937",
+        "pipeThickness": "20.444",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1937",
+        "pipeThickness": "20.444",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1937",
+        "pipeThickness": "19.476",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1945",
+        "pipeThickness": "19.476",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1945",
+        "pipeThickness": "19.476",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1945",
+        "pipeThickness": "19.476",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1945",
+        "pipeThickness": "19.476",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1945",
+        "pipeThickness": "19.476",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1958",
+        "pipeThickness": "19.654",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1958",
+        "pipeThickness": "19.654",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1958",
+        "pipeThickness": "19.654",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1958",
+        "pipeThickness": "19.654",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1958",
+        "pipeThickness": "19.654",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1972",
+        "pipeThickness": "19.654",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1972",
+        "pipeThickness": "19.654",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1972",
+        "pipeThickness": "19.654",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1972",
+        "pipeThickness": "19.654",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1972",
+        "pipeThickness": "19.654",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1989",
+        "pipeThickness": "19.654",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1989",
+        "pipeThickness": "18.202",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1989",
+        "pipeThickness": "18.202",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1989",
+        "pipeThickness": "18.202",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "1989",
+        "pipeThickness": "18.202",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "2001",
+        "pipeThickness": "20.075",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "2001",
+        "pipeThickness": "20.075",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "2001",
+        "pipeThickness": "20.075",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "2001",
+        "pipeThickness": "20.075",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "2001",
+        "pipeThickness": "20.075",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "2012",
+        "pipeThickness": "20.075",
+        "circumferenceId": "450",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "2012",
+        "pipeThickness": "20.075",
+        "circumferenceId": "460",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "2012",
+        "pipeThickness": "21.777",
+        "circumferenceId": "470",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "2012",
+        "pipeThickness": "21.777",
+        "circumferenceId": "480",
+        "count": "",
+        "countPercent": ""
+    },
+    {
+        "pipeSectionId": "2012",
+        "pipeThickness": "21.777",
+        "circumferenceId": "490",
+        "count": "",
+        "countPercent": ""
+    }
+]

@@ -1,0 +1,427 @@
+syntax = "proto3";
+package xenese;
+
+option java_package = "com.example.grpc";
+option java_outer_classname = "XeneseProto";
+
+import "google/protobuf/timestamp.proto";
+
+message UserCredentials {
+  string user_name = 1; // The caller
+  repeated string role_names = 2;
+}
+
+//
+// Represents the details of a ledger
+//
+message LedgerDetails {
+  string name = 1;
+  string description = 2;
+  string proof_hash = 3;
+  google.protobuf.Timestamp created = 4;
+  string created_by = 5;
+  google.protobuf.Timestamp updated = 6;
+  string updated_by = 7;
+  bool archived = 8;
+  bool offchain = 9;
+  // Azure or AWS
+  int32 uploadtype =10;
+}
+
+//
+// CreateLedgerRequest is used to create a new ledger
+//
+message CreateLedgerRequest {
+  UserCredentials user_credentials = 1; // the user credentials
+  string name = 2;                      // the name of the ledger
+  string description = 3;      // an optional description of the ledger
+}
+
+//
+// CreateLedgerResponse is the result when creating a new ledger
+//
+message CreateLedgerResponse {
+  LedgerDetails ledger = 1;   // the details of the ledger
+  Error error = 99;  // error data if the request failed
+}
+
+//
+// ListLedgersRequest is used to list ledgers
+//
+message ListLedgersRequest {
+  UserCredentials user_credentials = 1;      // the user credentials
+  string search_string = 2;        // Case insensitive like match on the name of the ledger
+  bool include_archived = 3;                // decides if archived ledgers are included in the result
+}
+
+//
+// ListLedgerResponse is the result when listing ledgers
+//
+message ListLedgersResponse {
+  repeated LedgerDetails ledgers = 1; // the ledger details returned from the ListLedgerRequest
+  Error error = 99; // error data if the request failed
+}
+
+//
+// ReadLedgerRequest is used to read the details for a named ledger
+//
+message ReadLedgerRequest {
+  UserCredentials user_credentials = 1; // the user credentials
+  string name = 2;
+}
+
+message ReadLedgerResponse {
+  LedgerDetails ledger = 1;
+  repeated string block_names = 2;
+  Error error = 99; // error data if the request failed
+}
+
+message UpdateLedgerRequest {
+  UserCredentials user_credentials = 1; // the user credentials
+  string name = 2;
+  string description = 3;
+  bool archived = 4;
+}
+
+message UpdateLedgerResponse {
+  LedgerDetails ledger = 1;
+  Error error = 99; // error data if the request failed
+}
+
+//
+// Represents the details of a block
+//
+message BlockDetails {
+  string name = 1;
+  int32 version = 2;
+  string mime_type = 3;
+  int32 size = 4;
+  bytes payload = 5;
+  string proof_hash = 6;
+  google.protobuf.Timestamp created = 7;
+  string created_by = 8;
+  google.protobuf.Timestamp updated = 9;
+  string updated_by = 10;
+  bool archived = 11;
+}
+
+message CreateBlockRequest {
+  UserCredentials user_credentials = 1; // the user credentials
+  string ledger_name = 2;
+  string block_name = 3;
+  string mime_type = 4;
+  bytes payload = 5;
+  bool IsPatchJson = 6;
+}
+
+message CreateBlockResponse {
+  BlockDetails block = 1;
+  Error error = 99; // error data if the request failed
+}
+
+message ListBlocksRequest {
+  UserCredentials user_credentials = 1; // the user credentials
+  string ledger_name = 2;
+  string search_string = 3; // Case insensitive match on block name
+  bool include_archived = 5;
+}
+
+message ListBlocksResponse {
+  repeated BlockDetails blocks = 1;
+  Error error = 99;
+}
+
+message ReadBlockRequest {
+  UserCredentials user_credentials = 1; // the user credentials
+  string ledger_name = 2;
+  string block_name = 3;
+  bool include_content = 4;
+  int32 version = 5;
+}
+
+message ReadBlockResponse {
+  BlockDetails block = 1;
+  Error error = 99; // error data if the request failed
+}
+
+message UpdateBlockRequest {
+  UserCredentials user_credentials = 1; // the user credentials
+  string ledger_name = 2;
+  string block_name = 3;
+  string mime_type = 4;
+  bytes payload = 5;
+  bool archived = 6;
+  int32 version = 7;
+  bool IsPatchJson = 8;
+}
+
+message UpdateBlockResponse {
+  BlockDetails block = 1;
+  Error error = 99; // error data if the request failed
+}
+
+message ListBlockHistoryRequest {
+  UserCredentials user_credentials = 1; // the user credentials
+  string ledger_name = 2;
+  string block_name = 3;
+  bool include_content = 4;
+}
+
+message ListBlockHistoryResponse {
+  repeated BlockDetails blocks = 1;
+  Error error = 99; // error data if the request failed
+}
+
+message OrderBy {
+  string path = 1;
+  bool descending = 2;
+}
+
+message MatchedBlock {
+  string name = 1;
+  string result = 5;
+  string proof_hash = 6;
+  google.protobuf.Timestamp created = 7;
+  string created_by = 8;
+  google.protobuf.Timestamp updated = 9;
+  string updated_by = 10;
+  int32 version = 11;
+}
+
+message FilterBlocksRequest {
+  UserCredentials user_credentials = 1; // the user credentials
+  string ledger_name = 2;
+  string jmes_filter = 3; // Filter should allow both block metadata and content inside the block
+  string jmes_map = 4; // Map should allow both block metadata and content inside the block
+  OrderBy order_bys = 5; // Order should allow both block metadata and content inside the block
+  int32 limit = 6;
+  int32 skip = 7;
+}
+
+message FilterBlocksResponse {
+  repeated MatchedBlock blocks = 1;
+  int32 block_count = 2;
+  Error error = 99; // error data if the request failed
+}
+
+message CountBlocksRequest {
+  UserCredentials user_credentials = 1;  // the user credentials
+  string ledger_name = 2;
+  string filter = 3; // Should we allow filtering on block metadata? Seems like it
+}
+
+//
+// CountBlocksResponse represents the result of a CountBlocksRequest
+//
+message CountBlocksResponse {
+  int32 count = 1;
+  Error error = 99; // error data if the request failed
+}
+
+/*
+I am not sure we need this - the read of blocks from a list of ids is a specialization of filter blocks. If this would
+be a significant performance improvement vs FilteredBlocks, we should do it.
+*/
+message ListBlocksFromNamesRequest {
+  UserCredentials user_credentials = 1;  // the user credentials
+  string ledger_name = 2;
+  repeated string block_names = 3;
+  string filter = 4; // Filter should allow both block metadata and content inside the block
+  string map = 5; // Map should allow both block metadata and content inside the block
+  string order = 6; // Order should allow both block metadata and content inside the block
+  int32 limit = 7;
+  int32 skip = 8;
+}
+
+//
+// ListBlocksFromNamesResponse represents the result of a ListBlocksFromNamesRequest
+//
+message ListBlocksFromNamesResponse {
+  repeated BlockDetails blocks = 1;
+  Error error = 99; // error data if the request failed
+}
+
+//
+// ApiVersionRequest represents a request for the current API Version
+//
+message ApiVersionRequest{
+
+}
+
+//
+// Represents the result of an ApiVersionRequest
+//
+message ApiVersionResponse {
+  string Version = 1;
+  Error error = 99; // error data if the request failed
+}
+
+//
+// CreateTriggerRequest represents request to create a JMES trigger for a given ledger
+//
+message CreateTriggerRequest{
+  UserCredentials user_credentials = 1;  // the user credentials
+  string ledger_name = 2; // Source ledger
+  string filter = 3; // "BPAAS block jmes filter applied to the data payload in a block."
+  string map = 4; // BPAAS block jmes Map applied to the data payload in a block.
+  string trigger_name = 5; // Name of the trigger
+  repeated string tags = 6; // Tags for the trigger to allow subscribers to decide how to integrate
+  string target_ledger_name = 7; // Name of the ledger this events will be pushed to ('<current ledger name>_Events' will be used by default if not provided)
+  string topic = 8; // Name of the topic events will be sent to
+}
+
+message CreateTriggerResponse{
+
+}
+
+message Error {
+  string message = 1;
+}
+
+message QueryBlocksRequest {
+  UserCredentials user_credentials = 1; // the user credentials
+  string ledger_name = 2;
+  int32 limit = 3;
+  int32 skip = 4;
+  string query = 5;
+}
+
+message QueryBlocksResponse {
+  repeated QueryBlock blocks = 1;
+  int32 block_count = 2; // the number of blocks returned from the QueryBlockRequest
+  Error error = 99; // error data if the request failed
+}
+
+message QueryBlock {
+  string name = 1; // name of the block
+  string result = 5; // Json result
+  string proof_hash = 6; // The proof hash of the block
+  google.protobuf.Timestamp created = 7; // the timestamp when the block was created
+  string created_by = 8;  // the name of the user who created this block
+  google.protobuf.Timestamp updated = 9; // the timestamp when the block was last updated
+  string updated_by = 10; // the name of the user who updated this block
+  int32 version = 11; // the version of the block
+}
+
+message DeleteLedgerRequest {
+  UserCredentials user_credentials = 1; // the user credentials
+  string name = 2;
+}
+
+//
+// DeleteLedgerResponse represents the result of a delete ledger request
+//
+message DeleteLedgerResponse {
+  Error error = 99; // error data if the request failed
+}
+
+message ReadBlockStreamRequest {
+  UserCredentials user_credentials = 1; // the user credentials
+  string ledger_name = 2;
+  string block_name = 3;
+  int32 chunk_size =4;
+  bool include_content = 5;
+  int32 version = 6;
+}
+
+message ReadBlockStreamStartResponse {
+  BlockDetails block = 1;
+  Error error = 99; // error data if the request failed
+}
+
+message ReadBlockStreamChunkResponse {
+  bytes payloadchunk = 1;
+}
+
+// The request message containing the bytes.
+message ReadBlockStreamResponse {
+  oneof ReadBlockResponse {
+    ReadBlockStreamStartResponse startresponse = 1;
+    ReadBlockStreamChunkResponse chunkresponse = 2;
+  }
+}
+
+message DownloadResponse {
+  bytes FileChunk = 1;
+}
+
+message CreateBlockStreamStartRequest {
+  UserCredentials user_credentials = 1; // the user credentials
+  string ledger_name = 2;
+  string block_name = 3;
+  int32 chunk_size =4;
+  string mime_type = 5;
+  bool archived = 6;
+  int32 version = 7;
+}
+
+message CreateBlockStreamChunkRequest {
+  bytes payloadchunk = 1;
+}
+
+// The request message containing the bytes.
+message CreateBlockStreamRequest {
+  oneof CreateBlockRequest {
+    CreateBlockStreamStartRequest startrequest = 1;
+    CreateBlockStreamChunkRequest chunkrequest = 2;
+  }
+}
+
+message CreateBlockStreamResponse {
+  BlockDetails block = 1;
+  Error error = 99; // error data if the request failed
+}
+
+message UpdateBlockStreamStartRequest {
+  UserCredentials user_credentials = 1; // the user credentials
+  string ledger_name = 2;
+  string block_name = 3;
+  int32 chunk_size =4;
+  string mime_type = 5;
+  bool archived = 6;
+  int32 version = 7;
+}
+
+message UpdateBlockStreamChunkRequest {
+  bytes payloadchunk = 1;
+}
+
+// The request message containing the bytes.
+message UpdateBlockStreamRequest {
+  oneof UpdateBlockRequest {
+    UpdateBlockStreamStartRequest startrequest = 1;
+    UpdateBlockStreamChunkRequest chunkrequest = 2;
+  }
+}
+
+
+message UpdateBlockStreamResponse {
+  BlockDetails block = 1;
+  Error error = 99; // error data if the request failed
+}
+message Chunk {
+  bytes messagedata = 1;
+}
+
+//
+service LedgerService {
+  rpc CreateLedger(CreateLedgerRequest) returns (CreateLedgerResponse);
+  rpc ListLedgers(ListLedgersRequest) returns (ListLedgersResponse);
+  rpc ReadLedger(ReadLedgerRequest) returns (ReadLedgerResponse);
+  rpc UpdateLedger(UpdateLedgerRequest) returns (UpdateLedgerResponse);
+  rpc CreateBlock(CreateBlockRequest) returns (CreateBlockResponse);
+  rpc ListBlocks(ListBlocksRequest) returns (ListBlocksResponse);
+  rpc ReadBlock(ReadBlockRequest) returns (ReadBlockResponse);
+  rpc UpdateBlock(UpdateBlockRequest) returns (UpdateBlockResponse);
+  rpc ListBlockHistory(ListBlockHistoryRequest) returns (ListBlockHistoryResponse);
+  rpc FilterBlocks(FilterBlocksRequest) returns (FilterBlocksResponse);
+  rpc CountBlocks(CountBlocksRequest) returns (CountBlocksResponse);
+  rpc ListBlocksFromNames(ListBlocksFromNamesRequest) returns (ListBlocksFromNamesResponse);
+  rpc ReadApiVersion(ApiVersionRequest) returns (ApiVersionResponse);
+  rpc CreateTrigger(CreateTriggerRequest) returns (CreateTriggerResponse);
+  rpc QueryBlocks(QueryBlocksRequest) returns (QueryBlocksResponse);
+  rpc DeleteLedger(DeleteLedgerRequest) returns (DeleteLedgerResponse);
+  rpc ReadBlockStream(ReadBlockStreamRequest) returns (stream ReadBlockStreamResponse);
+  rpc CreateBlockStream(stream CreateBlockStreamRequest) returns (CreateBlockStreamResponse);
+  rpc UpdateBlockStream(stream UpdateBlockStreamRequest) returns (UpdateBlockStreamResponse);
+}

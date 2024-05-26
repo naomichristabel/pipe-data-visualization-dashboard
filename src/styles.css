@@ -1,0 +1,443 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff !important;
+}
+
+.App {
+  /* width: 1200px; */
+  height: 300px;
+  position: relative;
+  /* padding: 16px; */
+  margin: 0px 50px 50px 50px;
+  box-sizing: border-box;
+  border: solid 1px rgb(74, 74, 74);
+  border-radius: 5px;
+}
+
+.title {
+  /* text-transform: uppercase; */
+  font-size: 18px;
+  font-weight: bolder;
+  padding: 10px;
+  margin-left: 2%;
+  padding-top: 2%;
+}
+
+.title span{
+  font-size: 11px;
+  font-weight: lighter;
+}
+
+.vis-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: solid 1px rgb(74, 74, 74);
+  border-radius: 5px;
+  width: 100%;
+}
+
+.controls {
+  position: relative;
+  top: 50%; /* Adjust as needed */
+  left: 55%; /* Adjust as needed */
+  transform: translate(-400%, -70%);
+  z-index: 1;
+  background: rgba(255, 255, 255);
+  padding: 10px;
+  width: 130px;
+  border-radius: 5px;
+}
+
+.tooltip-label {
+  font-size: 12px;
+  color: #888;
+  font-weight: bold;
+}
+
+.tooltip-red {
+  font-size: 16px;
+  color: #ff0000;
+  font-weight: bolder;
+}
+
+.tooltip-amber {
+  font-size: 16px;
+  color: #FF5733;
+  font-weight: bolder;
+}
+
+.tooltip-yellow {
+  font-size: 16px;
+  color: #FFFF00;
+  font-weight: bolder;
+}
+
+.tooltip-green {
+  font-size: 16px;
+  color: #04dc04;
+  font-weight: bolder;
+}
+
+.tooltip-black {
+  font-size: 16px;
+  color: #000000;
+  font-weight: bolder;
+}
+
+.cylinder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.reset-button {
+  position: absolute;
+  right: 46px;
+  top: 16px;
+  z-index: 1;
+}
+
+.chart-container {
+  padding: 10px;
+  /* margin-left: 30px !important; */
+}
+
+.chart-section {
+  /* display: flex;
+  flex-direction: column; */
+  border: solid 1px rgb(74, 74, 74);
+  padding: 16px;
+  /* margin-top: 10px; */
+  /* margin-left: 30px !important; */
+  /* width: 30%; */
+  margin-bottom: 2%;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* .chart-section text {
+  color: '#FFF';
+} */
+
+.bar-chart {
+  width: 105%;
+}
+
+.line-chart {
+  width: 100%;
+}
+
+/* Updated CSS for Dropdown */
+.dropdown-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em; /* Adjust as needed */
+}
+
+.dropdown-container select {
+  /* Add any additional styling here */
+}
+
+.trend-section {
+  /* display: flex;
+  flex-direction: column; */
+  border: solid 1px rgb(74, 74, 74);
+  padding: 16px;
+  /* margin-top: 10px; */
+  /* margin-left: 30px !important; */
+  /* width: 70%; */
+  margin-bottom: 2%;
+}
+
+.trend-section tspan {
+  color: #000;
+}
+
+.strongest-decline {
+  box-shadow: inset 1px 0px 3px rgba(100, 100, 100, 0.5), /* Shadow on left side */
+              inset 0px 1px 3px rgba(100, 100, 100, 0.5), /* Shadow on top side */
+              inset -1px 0px 3px rgba(100, 100, 100, 0.5), /* Shadow on right side */
+              inset 0px -1px 3px rgba(100, 100, 100, 0.5); /* Shadow on bottom side */
+  width: 101%;
+}
+
+/* Override the default button styles */
+.nav-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: #007bff;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Active button */
+.nav-link.active,
+.nav-link:active,
+.nav-link:focus {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Disabled button */
+.nav-link.disabled,
+.nav-link[disabled] {
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+.view-icons-container {
+  position: absolute;
+  left: 46px;
+  bottom: 16px;
+  z-index: 1;
+  padding: 0px 5px;
+}
+
+.icons-container {
+  position: absolute;
+  right: 46px;
+  bottom: 16px;
+  z-index: 1;
+  padding: 0px 5px;
+}
+
+.single-icon:hover {
+  background-color: "#1b2351";
+  opacity: 0.8;
+}
+
+.callout-container {
+  position: relative;
+}
+
+.callout-arrow {
+  position: absolute;
+  bottom: -7px; /* Adjust as needed */
+  left: 38%;
+  transform: translateX(150%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #fff; /* Adjust color as needed */
+}
+
+.pipe-legend {
+  position: absolute;
+  right: 30px;
+  bottom: 56px;
+  z-index: 1;
+  padding: 0px 5px;
+  background: rgba(255, 255, 255);
+  color: #000000;
+  border: solid 1px #fff;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-size: 8px;
+  text-align: center;
+}
+
+.pipe-legend .form-group {
+  text-align: left; 
+}
+
+.pipe-legend p {
+  margin-top: 5px;
+}
+
+.pipe-legend span {
+  font-size: 8px;
+  text-transform: none;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  z-index: 9999; /* Ensure the modal appears above other content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  z-index: 10000; /* Ensure the modal content appears above the overlay */
+}
+
+.modal-text{
+  color: #fff;
+  text-align: center;
+}
+
+.modal-text p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.modal-text span {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+.config-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #888;
+  margin: 10px 0px;
+}
+
+.config-content {
+  font-size: 28px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: -30px;
+}
+
+dl dt{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  vertical-align: middle;
+}
+dl dd{
+  display: inline-block;
+  margin: 0px 10px;
+  padding-bottom: 0;
+  vertical-align: middle;
+}
+dl dt.red{
+  background: #FF0000;
+}
+dl dt.amber{
+  background: #FF5733;
+}
+dl dt.yellow{
+  background: #FFFF00;
+}
+dl dt.green{
+  background: #04dc04;
+}
+
+.measures {
+  position: absolute;
+  top: 40px;
+  left: 17px;
+}
+
+.measures span {
+  font-size: 9px;
+}
+
+.histogram-legend {
+  position: absolute;
+  top: 60px;
+  right: 8px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: Arial, sans-serif;
+}
+
+
+.histogram-legend-title {
+  font-weight: bold;
+  font-size: 8px;
+  margin-bottom: 5px;
+}
+
+.histogram-legend-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.histogram-legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.histogram-legend-box {
+  width: 20px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.histogram-legend-label {
+  margin: 0;
+  font-size: 8px;
+}
+
+.wo-big-text {
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
+}
+
+.wo-big-text-grey {
+  font-size: 12px;
+  text-align: justify;
+  color: #888;
+}
+
+.wo-title-grey {
+  font-size: 8px;
+  color: #888;
+}
+
+.wo-border-box {
+  border: solid 1px #cdcdcd;
+  border-radius: 3px;
+  margin: 5px;
+  margin-left: 15px;
+  width: 70px;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  width: 100vw;  /* Full viewport width */
+}

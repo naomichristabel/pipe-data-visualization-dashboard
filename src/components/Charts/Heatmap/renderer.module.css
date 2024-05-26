@@ -1,0 +1,9 @@
+.rectangle {
+    cursor: pointer;
+    transition: transform 0.3s, stroke 0.3s; /* Add transition for smooth effect */
+}
+
+.rectangle:hover {
+  stroke: black; /* Add black border on hover */
+  stroke-width: 1; /* Adjust border width as needed */
+}
