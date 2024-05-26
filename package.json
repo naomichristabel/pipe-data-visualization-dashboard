@@ -2,6 +2,7 @@
   "name": "visual-cluster-analysis-demo",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/naomichristabel/pipe-data-visualization-dashboard/",
   "dependencies": {
     "@grpc/grpc-js": "^1.10.7",
     "@observablehq/plot": "^0.6.14",
