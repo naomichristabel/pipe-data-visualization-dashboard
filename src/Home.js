@@ -25,7 +25,7 @@ export default function Home() {
   const [layout, setLayout] = useState('grid');
   const [selectedPoint, setSelectedPoint] = useState(null);
   const [selPointColour, setSelPointColour] = useState();
-  const [loading, setLoading] = useState(true);  
+  const [loading, setLoading] = useState(false);  
   const [isReset, setIsReset] = useState(false);
   const [showCheckboxes, setShowCheckboxes] = useState(false);
   const [usingStripPoints, setUsingStripPoints] = useState({ [LABEL.direction.n]: false, [LABEL.direction.s]: false, [LABEL.direction.e]: false, [LABEL.direction.w]: false, [LABEL.direction.full]: false, [LABEL.strongestDecline]: false });
