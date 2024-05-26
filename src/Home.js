@@ -102,7 +102,7 @@ export default function Home() {
   }
 
   const handleGenerateWorkOrder = () => {
-    window.open('/pipe-data-visualization-dashboard/#/work_order', '_blank')
+    window.open('/#/work_order', '_blank')
   }
 
   useEffect(() => {
