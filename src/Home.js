@@ -102,7 +102,7 @@ export default function Home() {
   }
 
   const handleGenerateWorkOrder = () => {
-    window.open('/#/work_order', '_blank')
+    window.open('/pipe-data-visualization-dashboard/#/work_order', '_blank')
   }
 
   useEffect(() => {
@@ -114,7 +114,7 @@ export default function Home() {
             setLoading(prevLoading => !prevLoading);
             
             // Remove event listener after it's triggered once
-            window.removeEventListener('storage', handleLocalStorageChange);
+            //window.removeEventListener('storage', handleLocalStorageChange);
         }
     };
 
