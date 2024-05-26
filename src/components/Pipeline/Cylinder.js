@@ -78,9 +78,9 @@ const Cylinder = ({ height, lowestThicknessPoint, showPipe }) => {
   // FOR TRENDLINE PLOTS: N, E, W, S portions of the pipe to be shown
 
   // Position to slice the cylinder 
-  const xPos = lowestThicknessPoint.x;
-  const yPos = lowestThicknessPoint.y;
-  const zPos = lowestThicknessPoint.z;
+  const xPos = lowestThicknessPoint?.x;
+  const yPos = lowestThicknessPoint?.y;
+  const zPos = lowestThicknessPoint?.z;
 
   // Calculate the left and right lengths for each portion
   const leftLength = xPos;
