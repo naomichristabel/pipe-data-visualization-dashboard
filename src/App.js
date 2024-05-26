@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import AppRoutes from './AppRoutes.js';
 import Header from './components/Common/Header.js';
 
@@ -8,9 +8,9 @@ export default function App() {
     <>
     <Header />
     
-    <Router>
+    <HashRouter>
       <AppRoutes />
-    </Router>
+    </HashRouter>
     </>
   );
 }
