@@ -140,7 +140,8 @@ useEffect(() => {
 
       if(direction === LABEL.direction.nw) {
         subPipeData = pipeData?.filter(d => {
-          return ((d.pipeSectionId >= minPipeSectionId) && 
+          // return ((d.pipeSectionId >= minPipeSectionId) && 
+          return ((d.pipeSectionId >= lowestThickness?.pipeSectionId - 200) && 
                   (d.pipeSectionId <= lowestThickness?.pipeSectionId) && 
                     (d.circumferenceId >= lowestThickness?.circumferenceId) && 
                       (d.circumferenceId <= maxCircumferenceId))
@@ -148,20 +149,23 @@ useEffect(() => {
       } else if(direction === LABEL.direction.ne) {
         subPipeData = pipeData?.filter(d => {
           return ((d.pipeSectionId >= lowestThickness?.pipeSectionId) && 
-                  (d.pipeSectionId <= maxPipeSectionId) && 
+                  // (d.pipeSectionId <= maxPipeSectionId) && 
+                  (d.pipeSectionId <= lowestThickness?.pipeSectionId + 200) && 
                     (d.circumferenceId >= lowestThickness?.circumferenceId) && 
                       (d.circumferenceId <= maxCircumferenceId)) 
         })
       } else if(direction === LABEL.direction.se) {
         subPipeData = pipeData?.filter(d => {
           return ((d.pipeSectionId >= lowestThickness?.pipeSectionId) && 
-                    (d.pipeSectionId <= maxPipeSectionId) && 
+                    // (d.pipeSectionId <= maxPipeSectionId) && 
+                    (d.pipeSectionId <= lowestThickness?.pipeSectionId + 200) && 
                       (d.circumferenceId <= lowestThickness?.circumferenceId) && 
                         (d.circumferenceId >= minCircumferenceId))
         })
       } else if(direction === LABEL.direction.sw) {
         subPipeData = pipeData?.filter(d => {
-          return ((d.pipeSectionId >= minPipeSectionId) && 
+          // return ((d.pipeSectionId >= minPipeSectionId) && 
+          return ((d.pipeSectionId >= lowestThickness?.pipeSectionId - 200) &&
                     (d.pipeSectionId <= lowestThickness?.pipeSectionId) && 
                       (d.circumferenceId <= lowestThickness?.circumferenceId) && 
                         (d.circumferenceId >= minCircumferenceId))      

@@ -1,26 +1,57 @@
-import { useMemo } from "react";
+import { useMemo, useEffect, useState } from "react";
 import * as d3 from "d3";
 import { MARGIN, COLOURS } from '../../../utils/Contants';
 import styles from "./renderer.module.css";
 
 export const Renderer = ({
+  direction,
   width,
   height,
   data,
+  newFullDataset,
   setHoveredCell,
   colorScale,
 }) => {
+
+  const [lowestThickness, setLowestThickness] = useState();
   
+  useEffect(() => {
+    setLowestThickness(JSON.parse(localStorage.getItem('lowestThickness')))
+  }, [localStorage.getItem('lowestThickness')]);
+
   // bounds = area inside the axis
   const boundsWidth = width - MARGIN.right - MARGIN.left;
   const boundsHeight = height - MARGIN.top - MARGIN.bottom;
 
-  const allYGroups = useMemo(() => [...new Set(data?.map((d) => d.y))], [data]);
-  const allXGroups = useMemo(
-    () => [...new Set(data?.map((d) => String(d.x)))],
-    [data]
-  );
+  const maxCircumferenceId = Math.max(...newFullDataset?.map(d => Number(d.circumferenceId)) || []);
+  const minCircumferenceId = Math.min(...newFullDataset?.map(d => Number(d.circumferenceId)) || []);
 
+  const lowestThicknessCircumferenceId = lowestThickness?.circumferenceId;
+
+  let filteredData;
+
+  if(direction?.includes?.('North')) {
+    filteredData = data?.filter(d => 
+      d.y >= lowestThicknessCircumferenceId && 
+      d.y <= maxCircumferenceId
+    );
+  } else if(direction?.includes?.('South')) {
+    filteredData = data?.filter(d => 
+      d.y >= minCircumferenceId && 
+      d.y <= lowestThicknessCircumferenceId
+    );
+  } 
+
+  const allYGroups = useMemo(() => [...new Set(filteredData?.map((d) => d.y))], [data]);
+  // const allXGroups = useMemo(
+  //   () => [...new Set(data?.map((d) => String(d.x)))],
+  //   [data]
+  // );
+
+  const allXGroups = useMemo(() => {
+    return [...new Set(data?.filter(d => d.hasOwnProperty('distanceMeasure')).map(d => String(d.x)))];
+  }, [data]);
+  
   const xScale = useMemo(() => {
     return d3
       .scaleBand()
@@ -54,11 +85,12 @@ export const Renderer = ({
         className={styles.rectangle}
         width={d.distanceMeasure ? xScale.bandwidth() + 3 : xScale.bandwidth() + 1}
         height={d.distanceMeasure ? yScale.bandwidth() + 1 : yScale.bandwidth() + 0.25}
-        fill={(d.distanceMeasure) ? colorScale(d.distanceMeasure) : COLOURS.veryLightGrey}
+        fill={(d.hasOwnProperty('distanceMeasure')) ? colorScale(d.distanceMeasure) : COLOURS.veryLightGrey}
+        // fill={(d.distanceMeasure) ? colorScale(d.distanceMeasure) : COLOURS.veryLightGrey}
         //fill={(d.distanceMeasure !== null) ? colorScale(d.distanceMeasure) : "#F8F8F8"}
         // fill={d.pearsonCorrelation ? colorScale(d.pearsonCorrelation) : "#F8F8F8"}
         onMouseEnter={(e) => {
-          if (d.distanceMeasure) {
+          if (d.hasOwnProperty('distanceMeasure')) {
             setHoveredCell({
               xLabel: String(d.x),
               yLabel: String(d.y),
@@ -73,8 +105,8 @@ export const Renderer = ({
     );
   });
 
-  const xLabelInterval = 100; // Display label for every 100 x value
-  const yLabelInterval = 10; // Display label for every 20 y value
+  const xLabelInterval = 2; // Display label for every 100 x value
+  const yLabelInterval = 5; // Display label for every 20 y value
 
   const xLabels = allXGroups
   .filter((name, index) => index % xLabelInterval === 0) // Filter every 100th x value
@@ -203,7 +235,7 @@ export const Renderer = ({
         x={0}
         y={0}
         width={width}
-        height={height - MARGIN.top - MARGIN.bottom + 2}
+        height={height - MARGIN.top - MARGIN.bottom + 6}
         fill={COLOURS.veryLightGrey} 
       />
 

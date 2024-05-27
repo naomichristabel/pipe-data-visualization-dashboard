@@ -104,7 +104,7 @@ export default function Home() {
   const handleGenerateWorkOrder = () => {
     window.open('/pipe-data-visualization-dashboard/#/work_order', '_blank')
   }
-
+  
   useEffect(() => {
     // Listen for changes to localStorage
     const handleLocalStorageChange = () => {
@@ -120,6 +120,8 @@ export default function Home() {
 
     // Add event listener
     window.addEventListener('storage', handleLocalStorageChange);
+
+ 
 
     // Cleanup: Remove event listener
     return () => {
@@ -240,23 +242,23 @@ export default function Home() {
 
             <div className='row card' style={{ marginRight: '-5px'}}>
                 <HeatMap onDistanceMeasureCalc={handlePipeDataUpdate} direction={LABEL.direction.nw}/> 
-                <Heatmap width={500} height={300} newPipeData={newPipeData[LABEL.direction.nw]} newFullDataset={newFullDataset}/>
+                <Heatmap width={500} height={300} direction={LABEL.direction.nw} newPipeData={newPipeData[LABEL.direction.nw]} newFullDataset={newFullDataset}/>
             </div>
 
             <div className='row card mt-3' style={{ marginRight: '-5px'}}>
                 <HeatMap onDistanceMeasureCalc={handlePipeDataUpdate} direction={LABEL.direction.sw}/> 
-                <Heatmap width={500} height={300} newPipeData={newPipeData[LABEL.direction.sw]} newFullDataset={newFullDataset}/>
+                <Heatmap width={500} height={300} direction={LABEL.direction.sw} newPipeData={newPipeData[LABEL.direction.sw]} newFullDataset={newFullDataset}/>
             </div>
           </div>
           <div className='col-md-6' style={{ width: '49%', marginLeft: '15px' }}>
             <div className='row card' style={{ marginRight: '-20px'}}>
                 <HeatMap onDistanceMeasureCalc={handlePipeDataUpdate} direction={LABEL.direction.ne}/> 
-                <Heatmap width={500} height={300} newPipeData={newPipeData[LABEL.direction.ne]} newFullDataset={newFullDataset}/>
+                <Heatmap width={500} height={300} direction={LABEL.direction.ne} newPipeData={newPipeData[LABEL.direction.ne]} newFullDataset={newFullDataset}/>
             </div>
             <div className='row card mt-3' style={{ marginRight: '-20px'}}>
               
                 <HeatMap onDistanceMeasureCalc={handlePipeDataUpdate} direction={LABEL.direction.se}/> 
-                <Heatmap width={500} height={300} newPipeData={newPipeData[LABEL.direction.se]} newFullDataset={newFullDataset}/>
+                <Heatmap width={500} height={300} direction={LABEL.direction.se} newPipeData={newPipeData[LABEL.direction.se]} newFullDataset={newFullDataset}/>
             </div>
           </div>
         </div>

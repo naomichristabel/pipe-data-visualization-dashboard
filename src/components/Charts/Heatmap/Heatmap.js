@@ -7,7 +7,7 @@ import * as d3 from "d3";
 import { COLORS, THRESHOLDS } from '../../../utils/Contants';
 import DataContext from "../../../store/DataProvider";
 
-export const Heatmap = ({ width, height, newPipeData, newFullDataset }) => {
+export const Heatmap = ({ direction, width, height, newPipeData, newFullDataset }) => {
   const [hoveredCell, setHoveredCell] = useState(null);
   const [maxValue, setMaxValue] = useState();
   const [minValue, setMinValue] = useState();
@@ -73,6 +73,8 @@ export const Heatmap = ({ width, height, newPipeData, newFullDataset }) => {
         width={width}
         height={height - COLOR_LEGEND_HEIGHT}
         data={updatedData}
+        newFullDataset={newFullDataset}
+        direction={direction}
         setHoveredCell={setHoveredCell}
         colorScale={colorScale}
       />
