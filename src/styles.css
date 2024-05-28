@@ -164,10 +164,10 @@ body {
 }
 
 .strongest-decline {
-  box-shadow: inset 1px 0px 3px rgba(100, 100, 100, 0.5), /* Shadow on left side */
-              inset 0px 1px 3px rgba(100, 100, 100, 0.5), /* Shadow on top side */
-              inset -1px 0px 3px rgba(100, 100, 100, 0.5), /* Shadow on right side */
-              inset 0px -1px 3px rgba(100, 100, 100, 0.5); /* Shadow on bottom side */
+  box-shadow: inset 1px 0px 3px rgba(255, 0, 0, 0.5), /* Shadow on left side */
+              inset 0px 1px 3px rgba(255, 0, 0, 0.5), /* Shadow on top side */
+              inset -1px 0px 3px rgba(255, 0, 0, 0.5), /* Shadow on right side */
+              inset 0px -1px 3px rgba(255, 0, 0, 0.5); /* Shadow on bottom side */
   width: 101%;
 }
 

@@ -103,11 +103,11 @@ export const ColorLegend = ({
       <div
         style={{
           position: "relative",
-          transform: `translate(${COLOR_LEGEND_MARGIN.left}px,
+          transform: `translate(${COLOR_LEGEND_MARGIN.left - 10}px,
             ${COLOR_LEGEND_MARGIN.top}px`,
         }}
       >
-        <canvas ref={canvasRef} width={boundsWidth} height={boundsHeight} />
+        <canvas ref={canvasRef} width={boundsWidth - 10} height={boundsHeight} />
         <svg
           width={boundsWidth}
           height={boundsHeight}

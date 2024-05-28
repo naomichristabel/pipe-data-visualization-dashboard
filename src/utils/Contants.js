@@ -63,20 +63,24 @@ export const COLOR_LEGEND_HEIGHT = 60;
 
 export const COLORS = [
     "#ff0000", // Red
-    "#f05336", // Orange
-    // "#e29421", // Tangerine
-    // "#FFEEA6", // Light Yellow
-    "#ffd73e", // Yellow
-    // "#FFEF00", // Bright Yellow
+    "#f05336", // Reddish Orange
+    "#e29421", // Dark Orange
+    "#FF9A00",  // Orange
+    //"#FFCD00", // Light Orange
+    "#FFFF00", // Yellow
+    //"#FFEF00", // Bright Yellow
     // "#DAFA59", // Yellow Green
     "#C7FF72", // Light Green
-    // "#33D228", // Green
+    
     "#4ab04a", // Medium Green
-    "#1D8B15", // Dark Green
+    "#33D228", // Green
+    "#23C418",
+    //"#1D8B15", // Dark Green
 ];
 
 export const THRESHOLDS = [
-    0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6, 1.8, 2.0
+    //0, 0.4, 0.8, 1.2, 1.6, 1.8
+    0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6
     //0, 0.01, 0.02, 0.03, 0.09, 0.1, 0.15, 0.25, 0.4, 0.5, 1
 // 16,16.5,17,17.5,18,18.5,19,19.5,20,20.5,21,21.5,22,22.5,23
 // -1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1

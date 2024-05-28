@@ -30,10 +30,9 @@ export const Tooltip = ({ interactionData, width, height, colorScale }) => {
         <br />
         <b>Circumference ID: </b><span>{interactionData.yLabel}</span>
         <br />
-        <b>Pipe Thickness: </b><span style={interactionData.dist && { color: colorScale(interactionData.dist), fontWeight: 'bolder', textShadow: `-0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000,0.5px 0.5px 0 #000` }}>{interactionData.value} mm</span>
-        <br />
-        {interactionData.dist && <><b>Distance Measure: </b><span>{interactionData.dist} mm</span></>}
-
+        {/* <b>Pipe Thickness: </b><span style={interactionData.dist && { color: colorScale(interactionData.dist), fontWeight: 'bolder', textShadow: `-0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000,0.5px 0.5px 0 #000` }}>{interactionData.value} mm</span>
+        <br /> */}
+        {interactionData.dist && <><b>Distance Measure: </b><span style={interactionData.dist && { color: colorScale(interactionData.dist), fontWeight: 'bolder', textShadow: `-0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000,0.5px 0.5px 0 #000` }}>{interactionData.dist} mm</span></>}
       </div>
     </div>
   );

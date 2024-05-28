@@ -1,23 +1,44 @@
-import { useMemo, useEffect, useState } from "react";
+import { useMemo, useEffect, useState, useContext } from "react";
 import * as d3 from "d3";
-import { MARGIN, COLOURS } from '../../../utils/Contants';
+import { MARGIN, COLOURS, LABEL } from '../../../utils/Contants';
 import styles from "./renderer.module.css";
+import DataContext from "../../../store/DataProvider";
 
 export const Renderer = ({
   direction,
   width,
   height,
-  data,
+  //data,
   newFullDataset,
   setHoveredCell,
   colorScale,
 }) => {
 
   const [lowestThickness, setLowestThickness] = useState();
+  const [heatMapsData, setHeatMapsData] = useState({ });
+
+  const pipeCtx = useContext(DataContext);
   
   useEffect(() => {
     setLowestThickness(JSON.parse(localStorage.getItem('lowestThickness')))
   }, [localStorage.getItem('lowestThickness')]);
+
+  useEffect(() => {
+    setHeatMapsData(pipeCtx?.heatMapsData)
+  }, [pipeCtx?.heatMapsData]);
+
+  // Mapping from direction string to heatMapsData key
+  const directionMap = {
+    [LABEL.direction.nw]: "northWest",
+    [LABEL.direction.sw]: "southWest",
+    [LABEL.direction.ne]: "northEast",
+    [LABEL.direction.se]: "southEast",
+  };
+
+  // Determine the key to use based on the direction prop
+  const directionKey = directionMap[direction];
+
+  const data = heatMapsData[directionKey];
 
   // bounds = area inside the axis
   const boundsWidth = width - MARGIN.right - MARGIN.left;
@@ -42,7 +63,8 @@ export const Renderer = ({
     );
   } 
 
-  const allYGroups = useMemo(() => [...new Set(filteredData?.map((d) => d.y))], [data]);
+  const allYGroups = useMemo(() => [...new Set(data?.map((d) => d.y))], [data]);
+
   // const allXGroups = useMemo(
   //   () => [...new Set(data?.map((d) => String(d.x)))],
   //   [data]
@@ -56,7 +78,7 @@ export const Renderer = ({
     return d3
       .scaleBand()
       .range([0, boundsWidth])
-      .domain(allXGroups)
+      .domain(allXGroups?.sort((a, b) => a - b)) // Sort in ascending order
       .padding(0.1);
   }, [data, width]);
 
@@ -69,11 +91,12 @@ export const Renderer = ({
   }, [data, height]);
 
   const allRects = data?.map((d, i) => {
-    
+
     const xPos = xScale(String(d.x));
     const yPos = boundsHeight - yScale(d.y); // Subtract yPos from boundsHeight to reverse direction
 
-    if (d.value === null || !xPos || !yPos) {
+    //if (d.value === null || !xPos || !yPos) {
+    if (!xPos || !yPos) {
       return;
     }
 
@@ -85,7 +108,7 @@ export const Renderer = ({
         className={styles.rectangle}
         width={d.distanceMeasure ? xScale.bandwidth() + 3 : xScale.bandwidth() + 1}
         height={d.distanceMeasure ? yScale.bandwidth() + 1 : yScale.bandwidth() + 0.25}
-        fill={(d.hasOwnProperty('distanceMeasure')) ? colorScale(d.distanceMeasure) : COLOURS.veryLightGrey}
+        fill={(d.hasOwnProperty('distanceMeasure') && d.distanceMeasure < 1.6) ? colorScale(d.distanceMeasure) : COLOURS.veryLightGrey}
         // fill={(d.distanceMeasure) ? colorScale(d.distanceMeasure) : COLOURS.veryLightGrey}
         //fill={(d.distanceMeasure !== null) ? colorScale(d.distanceMeasure) : "#F8F8F8"}
         // fill={d.pearsonCorrelation ? colorScale(d.pearsonCorrelation) : "#F8F8F8"}
@@ -96,7 +119,7 @@ export const Renderer = ({
               yLabel: String(d.y),
               xPos: xPos + xScale.bandwidth() + MARGIN.left,
               yPos: yPos + xScale.bandwidth() / 2 + MARGIN.top,
-              value: d.value ? Math.round(d.value * 100) / 100 : null,
+              // value: d.value ? Math.round(d.value * 100) / 100 : null,
               dist: d.distanceMeasure ? d.distanceMeasure.toFixed(3) : null
             });
           }
@@ -140,7 +163,7 @@ export const Renderer = ({
       <text
         key={i}
         x={-5}
-        y={yPos + (yScale.bandwidth() / 2) - 40}
+        y={yPos + (yScale.bandwidth() / 2) - 30}
         textAnchor="end"
         dominantBaseline="middle"
         fontSize={8}
@@ -234,7 +257,7 @@ export const Renderer = ({
       <rect
         x={0}
         y={0}
-        width={width}
+        width={width - 100}
         height={height - MARGIN.top - MARGIN.bottom + 6}
         fill={COLOURS.veryLightGrey} 
       />

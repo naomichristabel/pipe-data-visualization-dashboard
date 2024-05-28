@@ -61,8 +61,10 @@ export const Heatmap = ({ direction, width, height, newPipeData, newFullDataset 
     
     if(values && values.length > 0) {
     // if(values && values.length > 0 && values[0] !== undefined) {
-        setMaxValue(d3.max(values))
-        setMinValue(d3.min(values))
+        // setMaxValue(d3.max(values))
+        // setMinValue(d3.min(values))
+        setMaxValue(1.5)
+        setMinValue(0)
     }
   
  }, [updatedData])

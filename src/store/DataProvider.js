@@ -11,7 +11,8 @@ export const DataContextProvider = (props) => {
     const [correlationGridData, setCorrelationGridData] = useState();
     const [minSlopeDirection, setMinSlopeDirection] = useState(null);
     const [stripPoints, setStripPoints] = useState({});
-    const [loading, setLoading] = useState(true); // Add a loading state
+    const [loading, setLoading] = useState(true);
+    const [heatMapsData, setHeatMapsData] = useState({});
 
     const setPipeDataHandler = (data) => {
         setPipeData(data);
@@ -48,6 +49,14 @@ export const DataContextProvider = (props) => {
 
           fetchPipeData(); // Fetch pipe data after histogram data is processed
 
+          fetchNorthEastData();
+
+          fetchNorthWestData();
+
+          fetchSouthEastData();
+
+          fetchSouthWestData();
+
           // // Create a new web worker
           // const worker = new Worker(new URL('./dataWorker.js', import.meta.url));
           // const chunkSize = 1000; // Adjust chunk size as needed
@@ -78,7 +87,140 @@ export const DataContextProvider = (props) => {
           setLoading(false); // Set loading to false in case of error
         }
       };
-  
+
+      const fetchNorthEastData = async () => {
+        try {
+          const response = await fetch('../../pipe-data-visualization-dashboard/Sebastian/heatmap-jsons/332001_c11_c21_ct2_ct3_complete.csv_18.154_2210.0_465_north-east_df_plot.json');
+          const jsonData = await response.json();
+          // console.log('jsonData NE',jsonData)
+
+          const northEastHeatMapData = [];
+          const yMapping = jsonData["Y/X"];
+
+          for (const x in jsonData) {
+            
+            if (!isNaN(parseFloat(x))) {  // Check if the key is a floating point number
+              for (const y in jsonData[x]) {
+                northEastHeatMapData.push({
+                  x: parseInt(x),
+                  y: yMapping[y] || parseInt(y),  // Use the mapped y value if available
+                  distanceMeasure: jsonData[x][y],
+                });
+              }
+            }
+          }
+
+          setHeatMapsData(prevHeatMapsData => ({
+            ...prevHeatMapsData,
+            northEast: northEastHeatMapData, 
+          }));
+
+          setLoading(false); // Set loading to false after all data is processed
+        } catch (error) {
+          console.error('Error fetching data:', error);
+          setLoading(false); // Set loading to false in case of error
+        }
+      }
+
+      const fetchNorthWestData = async () => {
+        try {
+          const response = await fetch('../../pipe-data-visualization-dashboard/Sebastian/heatmap-jsons/332001_c11_c21_ct2_ct3_complete.csv_18.154_2210.0_465_north-west_df_plot.json');
+          const jsonData = await response.json();
+          //console.log('jsonData NW',jsonData)
+
+          const northWestHeatMapData = [];
+          const yMapping = jsonData["Y/X"];
+
+          for (const x in jsonData) {
+            if (!isNaN(parseFloat(x))) {  // Check if the key is a floating point number
+              for (const y in jsonData[x]) {
+                northWestHeatMapData.push({
+                  x: parseInt(x),
+                  y: yMapping[y] || parseInt(y),  // Use the mapped y value if available
+                  distanceMeasure: jsonData[x][y],
+                });
+              }
+            }
+          }
+
+          setHeatMapsData(prevHeatMapsData => ({
+            ...prevHeatMapsData,
+            northWest: northWestHeatMapData, 
+          }));
+
+          setLoading(false); // Set loading to false after all data is processed
+        } catch (error) {
+          console.error('Error fetching data:', error);
+          setLoading(false); // Set loading to false in case of error
+        }
+      }
+
+      const fetchSouthEastData = async () => {
+        try {
+          const response = await fetch('../../pipe-data-visualization-dashboard/Sebastian/heatmap-jsons/332001_c11_c21_ct2_ct3_complete.csv_18.154_2210.0_465_south-east_df_plot.json');
+          const jsonData = await response.json();
+          //console.log('jsonData SE',jsonData)
+          
+          const southEastHeatMapData = [];
+          const yMapping = jsonData["Y/X"];
+
+          for (const x in jsonData) {
+            if (!isNaN(parseFloat(x))) {  // Check if the key is a floating point number
+              for (const y in jsonData[x]) {
+                southEastHeatMapData.push({
+                  x: parseInt(x),
+                  y: yMapping[y] || parseInt(y),  // Use the mapped y value if available
+                  distanceMeasure: jsonData[x][y],
+                });
+              }
+            }
+          }
+
+          setHeatMapsData(prevHeatMapsData => ({
+            ...prevHeatMapsData,
+            southEast: southEastHeatMapData, 
+          }));
+
+          setLoading(false); // Set loading to false after all data is processed
+        } catch (error) {
+          console.error('Error fetching data:', error);
+          setLoading(false); // Set loading to false in case of error
+        }
+      }
+
+      const fetchSouthWestData = async () => {
+        try {
+          const response = await fetch('../../pipe-data-visualization-dashboard/Sebastian/heatmap-jsons/332001_c11_c21_ct2_ct3_complete.csv_18.154_2210.0_465_south-west_df_plot.json');
+          const jsonData = await response.json();
+          //console.log('jsonData SW',jsonData)
+          
+          const southWestHeatMapData = [];
+          const yMapping = jsonData["Y/X"];
+
+          for (const x in jsonData) {
+            if (!isNaN(parseFloat(x))) {  // Check if the key is a floating point number
+              for (const y in jsonData[x]) {
+                southWestHeatMapData.push({
+                  x: parseInt(x),
+                  y: yMapping[y] || parseInt(y),  // Use the mapped y value if available
+                  distanceMeasure: jsonData[x][y],
+                });
+              }
+            }
+          }
+
+          setHeatMapsData(prevHeatMapsData => ({
+            ...prevHeatMapsData,
+            southWest: southWestHeatMapData, 
+          }));
+
+          setLoading(false); // Set loading to false after all data is processed
+        } catch (error) {
+          console.error('Error fetching data:', error);
+          setLoading(false); // Set loading to false in case of error
+        }
+      }
+ 
       const fetchPipeData = async () => {
         try {
           const response = await fetch('../../pipe-data-visualization-dashboard/Sebastian/332001_c11_c21_ct2_ct3_complete.csv_df_plot_array.json');
@@ -231,6 +373,10 @@ export const DataContextProvider = (props) => {
     //   console.log(histogramData)
     // }, [histogramData])
 
+    // useEffect(() => {
+    //   console.log('heatMapsData',heatMapsData)
+    // }, [heatMapsData])
+
     useEffect(() => {
       //On load of application, select all points on pipe that have thickness less than minimum acceptable threshold
       setSelectedOptions(['a'])
@@ -239,6 +385,7 @@ export const DataContextProvider = (props) => {
     const contextValue = {
         pipeData, 
         histogramData,
+        heatMapsData,
         setPipeDataHandler,
         selectedOptions,
         setSelectedOptionsHandler,
