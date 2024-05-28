@@ -225,21 +225,26 @@ export const Renderer = ({
         fontSize={8}
         fill={COLOURS.darkGrey}
     >
-        Pipe Section ID
+        <tspan>{direction.includes('West') && '←  '}</tspan>
+          Pipe Section ID
+        <tspan>{direction.includes('East') && '  →'}</tspan>
     </text>
 
   const yAxisLabel = 
-    <text
+      <text
         x={-boundsHeight / 2} // Center the label vertically
-        y={-MARGIN.left + 10} // Adjust the position horizontally
+        y={-MARGIN.left + 20} // Adjust the position horizontally
         textAnchor="middle" // Center the text
         dominantBaseline="hanging" // Position the text to the left of the axis
         fontSize={8}
         fill={COLOURS.darkGrey}
         transform={`rotate(-90)`} // Rotate the label for vertical orientation
-    >
-        Circumference ID
+      >
+        <tspan>{direction.includes('South') && '←  '}</tspan>
+          Circumference ID
+        <tspan>{direction.includes('North') && '  →'}</tspan>
     </text>
+
 
   return (
     <svg
